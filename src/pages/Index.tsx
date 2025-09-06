@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import BenefitsSection from "@/components/BenefitsSection";
+import BenefitsRow from "@/components/BenefitsRow";
 import ProductRail from "@/components/ProductRail";
-import QuizCallToAction from "@/components/QuizCallToAction";
+import MatchToolCard from "@/components/MatchToolCard";
 import EducationTeaser from "@/components/EducationTeaser";
 import ResultsCarousel from "@/components/ResultsCarousel";
-import NewsletterSignup from "@/components/NewsletterSignup";
+import EmailCapture from "@/components/EmailCapture";
+import SocialProof from "@/components/SocialProof";
 import Footer from "@/components/Footer";
 
 // Product images
@@ -14,69 +15,74 @@ import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
 import product4 from "@/assets/product-4.jpg";
 
-const mockProducts = [
+// Sample product data
+const bestSellerProducts = [
   {
-    id: "1",
-    name: "Luxury Lace Front Wig",
+    id: '1',
+    name: 'Signature HD Lace Front - Natural Black',
     price: 899,
     memberPrice: 719,
     image: product1,
     rating: 4.9,
     reviewCount: 124,
-    badges: ["Medical-Friendly", "Custom Fit"],
-    quickAdd: true,
+    badges: ['Best Seller'],
+    isMedicalFriendly: true
   },
   {
-    id: "2",
-    name: "Scalp Revival Serum",
-    price: 89,
-    memberPrice: 71,
-    image: product2,
-    rating: 4.8,
-    reviewCount: 89,
-    badges: ["FSA/HSA Eligible"],
-    quickAdd: true,
-  },
-  {
-    id: "3",
-    name: "Premium Hair Extensions",
-    price: 299,
-    memberPrice: 239,
-    image: product3,
-    rating: 4.7,
-    reviewCount: 156,
-    badges: ["Ready-to-Ship"],
-    quickAdd: true,
-  },
-  {
-    id: "4",
-    name: "Cranial Prosthetic Wig",
+    id: '2',
+    name: 'Crown Restoration Curly Bob - Honey Blonde',
     price: 1299,
     memberPrice: 1039,
-    image: product4,
+    image: product2,
     rating: 5.0,
-    reviewCount: 43,
-    badges: ["Medical-Friendly", "Insurance Eligible"],
-    quickAdd: false,
+    reviewCount: 89,
+    badges: ['Premium'],
+    isMedicalFriendly: true
   },
+  {
+    id: '3',
+    name: 'Ready-to-Ship Pixie Cut - Salt & Pepper',
+    price: 399,
+    memberPrice: 319,
+    image: product3,
+    rating: 4.8,
+    reviewCount: 67,
+    badges: ['Ready Today'],
+    isMedicalFriendly: false
+  },
+  {
+    id: '4',
+    name: 'Cranial Prosthesis - Medical Grade Comfort',
+    price: 1899,
+    memberPrice: 1519,
+    image: product4,
+    rating: 4.9,
+    reviewCount: 45,
+    badges: ['FSA Eligible'],
+    isMedicalFriendly: true
+  }
 ];
 
-const Index = () => {
+function Index() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
       <main>
         <Hero />
-        <BenefitsSection />
-        <ProductRail title="Best Sellers" products={mockProducts} />
-        <QuizCallToAction />
+        <BenefitsRow />
+        <ProductRail 
+          title="Best Sellers" 
+          products={bestSellerProducts} 
+        />
+        <MatchToolCard />
         <EducationTeaser />
         <ResultsCarousel />
-        <NewsletterSignup />
+        <SocialProof />
+        <EmailCapture />
       </main>
       <Footer />
     </div>
   );
-};
+}
 
 export default Index;
