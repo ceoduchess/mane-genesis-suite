@@ -1,11 +1,8 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import BenefitsRow from "@/components/BenefitsRow";
+import BenefitsSection from "@/components/BenefitsSection";
 import ProductRail from "@/components/ProductRail";
-import MatchToolCard from "@/components/MatchToolCard";
 import EducationTeaser from "@/components/EducationTeaser";
-import ResultsCarousel from "@/components/ResultsCarousel";
-import EmailCapture from "@/components/EmailCapture";
 import SocialProof from "@/components/SocialProof";
 import Footer from "@/components/Footer";
 
@@ -69,16 +66,14 @@ function Index() {
       <Header />
       <main>
         <Hero />
-        <BenefitsRow />
+        <BenefitsSection />
         <ProductRail 
           title="Best Sellers" 
+          subtitle="Our most loved pieces, trusted by thousands of clients worldwide"
           products={bestSellerProducts} 
         />
-        <MatchToolCard />
         <EducationTeaser />
-        <ResultsCarousel />
         <SocialProof />
-        <EmailCapture />
       </main>
       <Footer />
     </div>
