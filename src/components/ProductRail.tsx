@@ -16,21 +16,15 @@ interface Product {
 
 interface ProductRailProps {
   title: string;
-  subtitle?: string;
   products: Product[];
 }
 
-const ProductRail = ({ title, subtitle, products }: ProductRailProps) => {
+const ProductRail = ({ title, products }: ProductRailProps) => {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
-          <div>
-            <h2 className="text-3xl font-bold text-foreground">{title}</h2>
-            {subtitle && (
-              <p className="text-muted-foreground mt-2">{subtitle}</p>
-            )}
-          </div>
+          <h2 className="text-3xl font-bold text-foreground">{title}</h2>
           <Button variant="outline">View All</Button>
         </div>
 
