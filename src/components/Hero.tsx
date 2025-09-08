@@ -38,6 +38,9 @@ const Hero = () => {
             <Button variant="medical" size="lg" className="text-lg px-8 py-6">
               Shop Wigs
             </Button>
+            <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              Get your Match
+            </Button>
           </div>
 
           {/* Trust Indicators */}
