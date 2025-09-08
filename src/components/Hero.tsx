@@ -23,20 +23,20 @@ const Hero = () => {
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Scalp-first, science-backed.{" "}
-            <span className="text-primary">Luxury you can live in.</span>
+            We're the Mayo Clinic for scalp health—plus{" "}
+            <span className="text-primary">custom wigs that fit your life.</span>
           </h1>
           
           <p className="text-xl text-muted-foreground mb-8 max-w-lg">
-            Custom wigs and clinical care plans designed for real life—by a licensed cosmetologist and hair-loss practitioner.
+            Serious about your scalp. Obsessive about your confidence.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Button variant="hero" size="lg" className="text-lg px-8 py-6">
-              Get Your Match
+              Book Scalp Analysis
             </Button>
             <Button variant="medical" size="lg" className="text-lg px-8 py-6">
-              Book Scalp Analysis
+              Shop Wigs
             </Button>
           </div>
 
