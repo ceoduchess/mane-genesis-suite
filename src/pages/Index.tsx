@@ -4,6 +4,7 @@ import BenefitsSection from "@/components/BenefitsSection";
 import ProductRail from "@/components/ProductRail";
 import EducationTeaser from "@/components/EducationTeaser";
 import SocialProof from "@/components/SocialProof";
+import TipsSection from "@/components/TipsSection";
 import Footer from "@/components/Footer";
 
 // Product images
@@ -74,6 +75,7 @@ function Index() {
         />
         <EducationTeaser />
         <SocialProof />
+        <TipsSection />
       </main>
       <Footer />
     </div>
