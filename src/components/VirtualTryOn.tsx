@@ -85,6 +85,7 @@ const VirtualTryOn = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedWig, setSelectedWig] = useState<WigStyle | null>(null);
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
+  const [showImagePreview, setShowImagePreview] = useState(false);
   const [cameraActive, setCameraActive] = useState(false);
   const [savedLooks, setSavedLooks] = useState<string[]>([]);
   const [cartItems, setCartItems] = useState<string[]>([]);
@@ -102,6 +103,7 @@ const VirtualTryOn = () => {
       const reader = new FileReader();
       reader.onload = (e) => {
         setUploadedImage(e.target?.result as string);
+        setShowImagePreview(true);
         setCameraActive(false);
       };
       reader.readAsDataURL(file);
@@ -142,9 +144,19 @@ const VirtualTryOn = () => {
         ctx.drawImage(videoRef.current, 0, 0);
         const dataURL = canvas.toDataURL('image/png');
         setUploadedImage(dataURL);
+        setShowImagePreview(true);
         stopCamera();
       }
     }
+  };
+
+  const proceedToTryOn = () => {
+    setShowImagePreview(false);
+  };
+
+  const retakePhoto = () => {
+    setUploadedImage(null);
+    setShowImagePreview(false);
   };
 
   const toggleSavedLook = (wigId: string) => {
@@ -216,6 +228,25 @@ const VirtualTryOn = () => {
                   </div>
                 )}
 
+                {uploadedImage && showImagePreview && (
+                  <div className="text-center space-y-4">
+                    <img
+                      src={uploadedImage}
+                      alt="Preview"
+                      className="w-full h-64 object-cover rounded-lg mx-auto"
+                    />
+                    <p className="text-muted-foreground">How does this photo look?</p>
+                    <div className="flex flex-col gap-2">
+                      <Button onClick={proceedToTryOn} className="w-full">
+                        Looks good! Start trying on styles
+                      </Button>
+                      <Button onClick={retakePhoto} variant="outline" className="w-full">
+                        Retake photo
+                      </Button>
+                    </div>
+                  </div>
+                )}
+
                 {cameraActive && (
                   <div className="relative w-full h-full">
                     <video
@@ -235,7 +266,7 @@ const VirtualTryOn = () => {
                   </div>
                 )}
 
-                {uploadedImage && (
+                {uploadedImage && !showImagePreview && (
                   <div className="relative w-full h-full">
                     <img
                       src={uploadedImage}
